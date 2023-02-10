@@ -5,7 +5,7 @@ export const PRODUCTS = [
     title: 'Sarten 30 cm',
     description: 'Sarten de teflón circunsferencia de 30 cm',
     PakageWeight: '1.0 Kg',
-    src: "sarten30.jpg",
+    src: "../../constants/data/pictures/sarten30.jpg",
     price: 350,
   },
   {
