@@ -1,7 +1,7 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { OrderDetail, Orders } from '../screens/index.js';
 
 import { THEME } from '../constants/theme';
-import { Orders } from '../screens';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,7 +21,18 @@ const OrdersNavigator = () => {
           color: THEME.colors.title,
         },
       }}>
-      <Stack.Screen name="Orders" component={Orders} />
+      <Stack.Screen 
+        name="Orders" 
+        component={Orders} 
+      />  
+      <Stack.Screen
+        name="OrderDetail"
+        component={OrderDetail}
+        options={({ route }) => ({
+          title: route.params.title,
+        })}
+      />
+      
     </Stack.Navigator>
   );
 };

@@ -1,19 +1,22 @@
 import { FlatList, Text, TouchableOpacity, View } from 'react-native';
 
-import { CART } from '../../constants/data/index';
 import CartItem from '../../components/cart-item';
 import { styles } from './styles';
+import { useSelector } from 'react-redux';
 
 const Cart = ({ navigation }) => {
+  
+  const cart = useSelector((state) => state.cart.carts);
   const total = 2000;
   const onDelete = (id) => {};
   const renderItem = ({ item }) => <CartItem item={item} onDelete={onDelete} />;
   const keyExtractor = (item) => item.id.toString();
+    
   return (
     <View style={styles.container}>
       <View style={styles.listContainer}>
         <FlatList
-          data={CART}
+          data={cart}
           renderItem={renderItem}
           keyExtractor={keyExtractor}
           style={styles.listContainer}

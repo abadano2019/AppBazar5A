@@ -1,8 +1,7 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { Categories, ProductDetail, Products } from '../screens/index';
 
 import { THEME } from '../constants/theme';
-import { Categories, ProductDetail, Products } from '../screens/index';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 

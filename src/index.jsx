@@ -1,9 +1,11 @@
-import { useFonts } from 'expo-font';
-import { View, ActivityIndicator } from 'react-native';
+import { ActivityIndicator, View } from 'react-native';
 
-import { THEME } from './constants/theme';
 import AppNavigator from './navigation';
+import  {Provider} from 'react-redux'
+import { THEME } from './constants/theme';
+import store from './store';
 import { styles } from './styles';
+import { useFonts } from 'expo-font';
 
 const App = () => {
   const [loaded] = useFonts({
@@ -20,7 +22,11 @@ const App = () => {
       </View>
     );
   }
-  return <AppNavigator />;
+  return (
+    <Provider store={store}>
+      <AppNavigator />
+    </Provider>
+  )
 };
 
 export default App;

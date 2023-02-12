@@ -1,20 +1,27 @@
 import { Button, Text, TextInput, View } from 'react-native';
-import { useEffect, useState } from 'react';
 
-import { CART } from '../../constants/data/index';
-import CartItem from '../../components/cart-item';
 import { THEME } from '../../constants/theme';
+import { addMessage } from '../../store/actions/contact.action';
 import { styles } from './styles';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 
 const Contact = ({ navigation }) => {
 
+  const dispatch = useDispatch()
   const [name,setName] = useState("")
   const [mail, setMail] = useState("")
   const [message, setMessage] = useState("")
   const [clear, setClear] = useState(false)
 
   onHandleFormSubmit = () =>{
-    console.log(name,mail,message)
+    
+    const datos = {
+        name: name,
+        mail: mail,
+        message: message
+    }
+    dispatch(addMessage(datos))
     setMail("")
     setName("")
     setMessage("")

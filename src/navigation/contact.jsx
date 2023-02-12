@@ -7,7 +7,7 @@ const Stack = createNativeStackNavigator();
 const ContactNavigation = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Cart"
+      initialRouteName="Contact"
       screenOptions={{
         headerStyle: {
           backgroundColor: THEME.colors.white,

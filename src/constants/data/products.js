@@ -5,7 +5,7 @@ export const PRODUCTS = [
     title: 'Sarten 30 cm',
     description: 'Sarten de teflón circunsferencia de 30 cm',
     PakageWeight: '1.0 Kg',
-    src: "../../constants/data/pictures/sarten30.jpg",
+    src: "sarten30.jpg",
     price: 350,
   },
   {
@@ -14,6 +14,7 @@ export const PRODUCTS = [
     title: 'Sarten 45 cm',
     description: 'Sarten de teflón circunsferencia de 45 cm',
     PakageWeight: '1.0 Kg',
+    src: "sarten30.jpg",
     price: 550,
   },
   {
@@ -22,6 +23,7 @@ export const PRODUCTS = [
     title: 'Mixer 3 velocidades',
     description: 'Mixer con accesorios de 3 velocidades',
     PakageWeight: '0.5 kg',
+    src: "sarten30.jpg",
     price: 2550,
   },
   {
@@ -30,6 +32,7 @@ export const PRODUCTS = [
     title: 'Mixer 5 velocidades',
     description: 'Mixer con accesorios de 5 velocidades',
     PakageWeight: '0.5 Kg',
+    src: "sarten30.jpg",
     price: 3150,
   },
   {
@@ -38,6 +41,7 @@ export const PRODUCTS = [
     title: 'TV Led 32"',
     description: 'TV Led de 32 pulgadas',
     PakageWeight: '8.0 Kg',
+    src: "sarten30.jpg",
     price: 8500,
   },
   {
@@ -46,6 +50,7 @@ export const PRODUCTS = [
     title: 'Aspiradora Rotel 2000W',
     description: 'Aspiradora marca Rotel con 2000 watt de potencia',
     PakageWeight: '4.0 kg',
+    src: "sarten30.jpg",
     price: 4000,
   },
   {
@@ -54,6 +59,7 @@ export const PRODUCTS = [
     title: 'Bacha Rimontti',
     description: 'Bacha marca Rimontti, de 60cm x 80cm',
     PakageWeight: '5.0 kg',
+    src: "sarten30.jpg",
     price: 4100,
   },
   {
@@ -62,6 +68,7 @@ export const PRODUCTS = [
     title: 'Inodoro largo marca Trevi',
     description: 'Inodoro marca Trevi ancho de descarga 30.8 cm',
     PakageWeight: '5.0 kg',
+    src: "sarten30.jpg",
     price: 2540,
   },
   {
@@ -70,6 +77,7 @@ export const PRODUCTS = [
     title: 'Copas de cristal italiano',
     description: 'Juego de 6 copas de cristal italiano',
     PakageWeight: '1.5 Kg',
+    src: "sarten30.jpg",
     price: 5500,
   },
 ];
