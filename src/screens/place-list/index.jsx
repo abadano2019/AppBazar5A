@@ -8,7 +8,7 @@ import { useFocusEffect } from '@react-navigation/native';
 import {viewPlace} from '../../store/actions/index'
 
 const PlaceList = ({ navigation }) => {
-  const places = useSelector((state) => state.places.places);
+  let places = useSelector((state) => state.places.places);
   const [count, setCount] = useState(0)
   const [data, setData] = useState(null);
   const dispatch = useDispatch();
@@ -18,7 +18,8 @@ const PlaceList = ({ navigation }) => {
 
   const listPlaces = () => {
     console.log("entre en list Places")
-    const filteredPlaces = places.filter((place) => place.image !== undefined)
+    //const filteredPlaces = places.filter((place) => place.image !== undefined)
+    const filteredPlaces = places
     console.log(filteredPlaces)
     return filteredPlaces 
   }
@@ -26,7 +27,12 @@ const PlaceList = ({ navigation }) => {
   useFocusEffect(
     useCallback(() => {
       dispatch(viewPlace());
-    }, [dispatch])
+      
+      console.log("DATA")
+      places = listPlaces()
+      console.log(places)
+      
+    }, [places])
   );
 
   /*useEffect(() => {
@@ -45,7 +51,7 @@ const PlaceList = ({ navigation }) => {
   const keyExtractor = (item) => item.id;
   return (
     <FlatList
-      data={listPlaces()}
+      data={places}
       style={styles.container}
       keyExtractor={keyExtractor}
       renderItem={renderItem}
