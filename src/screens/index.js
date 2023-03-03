@@ -5,3 +5,8 @@ export { default as Cart } from './cart';
 export { default as Orders } from './orders';
 export { default as Contact} from './contact';
 export { default as OrderDetail} from './order-detail';
+export { default as Auth} from './auth';
+export { default as MapsScreen } from "./maps";
+export { default as NewPlaceScreen } from "./new-place";
+export { default as PlaceDetailScreen } from "./place-detail";
+export { default as PlaceListScreen } from "./place-list";

@@ -50,4 +50,10 @@ export const styles = StyleSheet.create({
     color: THEME.colors.black,
     marginBottom: 5,
   },
+  buttonsContainer:{
+    width: 90,
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+    
+  }
 });

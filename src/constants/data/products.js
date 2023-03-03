@@ -5,7 +5,7 @@ export const PRODUCTS = [
     title: 'Sarten 30 cm',
     description: 'Sarten de teflón circunsferencia de 30 cm',
     PakageWeight: '1.0 Kg',
-    src: "sarten30.jpg",
+    src: "https://firebasestorage.googleapis.com/v0/b/bazar5aapp.appspot.com/o/Bazar1.jpg?alt=media&token=a5cf68d7-ab32-4fd6-b5f4-5eb0b4fbad6d",
     price: 350,
   },
   {
@@ -14,7 +14,7 @@ export const PRODUCTS = [
     title: 'Sarten 45 cm',
     description: 'Sarten de teflón circunsferencia de 45 cm',
     PakageWeight: '1.0 Kg',
-    src: "sarten30.jpg",
+    src: "https://firebasestorage.googleapis.com/v0/b/bazar5a.appspot.com/o/img%2FBazar10.jpg?alt=media&token=f8509b7d-78e1-4a2b-a0a3-0aaebd224ebf",
     price: 550,
   },
   {
@@ -23,7 +23,7 @@ export const PRODUCTS = [
     title: 'Mixer 3 velocidades',
     description: 'Mixer con accesorios de 3 velocidades',
     PakageWeight: '0.5 kg',
-    src: "sarten30.jpg",
+    src: "https://firebasestorage.googleapis.com/v0/b/bazar5a.appspot.com/o/img%2FBazar12.jpg?alt=media&token=d6e6c912-cab5-47ab-807a-197388e944f1",
     price: 2550,
   },
   {
@@ -32,7 +32,7 @@ export const PRODUCTS = [
     title: 'Mixer 5 velocidades',
     description: 'Mixer con accesorios de 5 velocidades',
     PakageWeight: '0.5 Kg',
-    src: "sarten30.jpg",
+    src: "https://firebasestorage.googleapis.com/v0/b/bazar5a.appspot.com/o/img%2FBazar3.jpg?alt=media&token=cf18e38d-34e2-4f0a-be83-961892f7485d",
     price: 3150,
   },
   {

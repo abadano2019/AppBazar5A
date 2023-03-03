@@ -1,9 +1,9 @@
 import { ActivityIndicator, View } from 'react-native';
 
 import AppNavigator from './navigation';
-import  {Provider} from 'react-redux'
+import  { Provider } from 'react-redux'
 import { THEME } from './constants/theme';
-import store from './store';
+import  store  from './store/index.js';
 import { styles } from './styles';
 import { useFonts } from 'expo-font';
 

@@ -1,14 +1,17 @@
-import { FlatList, SafeAreaView, View } from 'react-native';
+import { FlatList, SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { CategoryItem } from '../../components';
 import React from 'react';
+import {logout} from '../../store/actions/index'
 import { selectCategory } from '../../store/actions';
 import { styles } from './styles';
 
 const Categories = ({ navigation }) => {
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.category.categories);
+  const user = useSelector((state) => state.auth.userId)
+  const token = useSelector((state) => state.auth.token)
   const onSelected = (item) => {
     dispatch(selectCategory(item.id));
     navigation.navigate('Products', {
@@ -17,6 +20,13 @@ const Categories = ({ navigation }) => {
     });
     
   };
+
+  const onHandlerLogout =()=>{
+    console.log(user, token)
+    dispatch(logout())
+
+  }
+  
   const renderItem = ({ item }) => <CategoryItem item={item} onSelected={onSelected} />;
   const keyExtractor = (item) => item.id.toString();
   return (
@@ -28,6 +38,15 @@ const Categories = ({ navigation }) => {
         style={styles.containerList}
         contentContainerStyle={styles.contentContainerList}
       />
+        <View style={{...styles.buttonContainer}}>
+          <TouchableOpacity
+            style={{ ...styles.contentContainer }}
+            onPress={() => onHandlerLogout()}>
+            <View>
+              <Text style={styles.title}>Exit</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
     </SafeAreaView>
   );
 };

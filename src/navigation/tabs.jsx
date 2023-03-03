@@ -1,14 +1,24 @@
+import { useDispatch, useSelector } from 'react-redux';
+
 import CartNavigator from './cart';
 import ContactNavigator from './contact'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import OrdersNavigator from './orders';
+import PlacesNavigator from './places'
 import ShopNavigator from './shop';
 import { THEME } from '../constants/theme';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useEffect } from 'react';
 
 const BottomTab = createBottomTabNavigator();
 
 const Tabs = () => {
+
+  const cart = useSelector((state) => state.cart.items);
+  const onHandlerSelectLogout = () =>{
+    console.log("seleccionado")
+  }
+
   return (
     <BottomTab.Navigator
       initialRouteName="ShopTab"
@@ -61,8 +71,16 @@ const Tabs = () => {
               color={THEME.colors.primary}
             />
           ),
+          tabBarBadge: cart.length,
+          tabBarBadgeStyle: {
+            backgroundColor: THEME.colors.secondary,
+            color: THEME.colors.text,
+            fontFamily: 'Bitter-Bold',
+            fontSize: 11,
+          },
         }}
       />
+
       <BottomTab.Screen
         name="ContactTab"
         component={ContactNavigator}
@@ -74,9 +92,25 @@ const Tabs = () => {
               size={22}
               color={THEME.colors.primary}
             />
+            
           ),
         }}
       />
+      <BottomTab.Screen
+        name="PlacesTab"
+        component={PlacesNavigator }
+        options={{
+          title: 'Places',
+          tabBarIcon: ({ focused }) => (
+            <Ionicons
+              name={focused ? 'business' : 'business-outline'}
+              size={22}
+              color={THEME.colors.primary}
+            />
+            
+          ),
+        }}
+      />          
     </BottomTab.Navigator>
   );
 };

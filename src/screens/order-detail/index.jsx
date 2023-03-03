@@ -8,8 +8,8 @@ import { useSelector } from 'react-redux';
 
 const OrderDetail = ({ navigation }) => {
 
-  const order = useSelector((state) => state.order.selected)
-  const filteredItems = useSelector((state) => state.order.filteredItems);
+  const order = useSelector((state) => state.orders.selected)
+  const filteredItems = useSelector((state) => state.orders.filteredItems);
 
   const renderItem = ({ item }) => <ProductOrderItem item={item}/>;
   const keyExtractor = (item) => item.id.toString();

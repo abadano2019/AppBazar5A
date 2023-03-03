@@ -1,13 +1,24 @@
-import { cartReducer, categoryReducer, contactReducer, orderReducer, productReducer } from './reducers';
-import { combineReducers, createStore } from 'redux';
+import { applyMiddleware, combineReducers, createStore } from 'redux';
+import {
+        authReducer,
+        cartReducer,
+        categoryReducer,
+        contactReducer,
+        ordersReducer,
+        placesReducer,
+        productReducer,
+} from './reducers';
+
+import thunk from 'redux-thunk';
 
 const rootReducer = combineReducers({
   products: productReducer,
   category: categoryReducer,
   cart: cartReducer,
-  order: orderReducer,
+  orders: ordersReducer,
   messages: contactReducer,
-  
+  auth: authReducer,
+  places: placesReducer,
 });
 
-export default createStore(rootReducer);
+export default createStore(rootReducer, applyMiddleware(thunk));

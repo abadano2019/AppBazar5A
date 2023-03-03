@@ -28,11 +28,12 @@ const ProductOrderItem = ({ item }) => {
     <View style={styles.container}>
       <TouchableOpacity style={styles.contentContainer}>
         <Image
+          source={{uri: item.src}}
           /*source={{
             uri: "https://mystickermania.com/cdn/stickers/noob-pack/game-over-glitch-effect-512x512.png",
           }}*/
-          source=
-            {require("../../constants/data/pictures/sarten30.jpg")}
+       //   source=
+       //     {require("../../../src/public/pictures/sarten30.jpg")}
             //uri: "https://mystickermania.com/cdn/stickers/noob-pack/game-over-glitch-effect-512x512.png",
           
           style={styles.image}
