@@ -11,7 +11,7 @@ const NewPlace = ({ navigation }) => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState(null);
   const [coords, setCoords] = useState(null);
-  
+  const dispatch = useDispatch()
 
   const onHandlerSubmit = () => {
     console.log("onSUBMITE")
@@ -23,7 +23,7 @@ const NewPlace = ({ navigation }) => {
       coords: coords,
     }
     console.log("pase")
-      
+    dispatch(addPlace(datos));  
     navigation.goBack();
     
     //navigation.navigate('PlaceList', { screen: "Places"  });

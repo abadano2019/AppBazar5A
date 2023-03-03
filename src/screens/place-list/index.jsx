@@ -4,13 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { FlatList } from "react-native";
 import { PlaceItem } from "../../components";
 import { styles } from "./styles";
-import { useFocusEffect } from "@react-navigation/native";
+import { useFocusEffect } from '@react-navigation/native';
 import {viewPlace} from '../../store/actions/index'
 
 const PlaceList = ({ navigation }) => {
   const places = useSelector((state) => state.places.places);
   const [count, setCount] = useState(0)
   const [data, setData] = useState(null);
+  const dispatch = useDispatch();
 
   console.log("entre a los items de places")
   console.log('places', places)
@@ -22,18 +23,18 @@ const PlaceList = ({ navigation }) => {
     return filteredPlaces 
   }
 
-  /*useFocusEffect(
+  useFocusEffect(
     useCallback(() => {
       dispatch(viewPlace());
     }, [dispatch])
-  );*/
+  );
 
-  useEffect(() => {
+  /*useEffect(() => {
     const lista = listPlaces();
     console.log("entre a use Effect")
     setCount(count => count + 1)
     setData(lista);
-  }, []);
+  }, []);*/
 
   const renderItem = ({ item }) =>(  
     < PlaceItem
@@ -44,7 +45,7 @@ const PlaceList = ({ navigation }) => {
   const keyExtractor = (item) => item.id;
   return (
     <FlatList
-      data={data}
+      data={listPlaces()}
       style={styles.container}
       keyExtractor={keyExtractor}
       renderItem={renderItem}

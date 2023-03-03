@@ -36,11 +36,7 @@ const placesReducer = (state = initialState, action) => {
           const item = { ...action.item, quantity: 1 };
           newCart = [...state.items, item];
         }*/
-      return {
-        ...state,
-        /*items: newCart,
-        total: sumTotal(newCart),*/
-      };
+      return state;
     
     default:
       return state;
