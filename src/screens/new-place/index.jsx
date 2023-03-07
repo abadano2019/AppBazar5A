@@ -1,17 +1,24 @@
 import { Button, ScrollView, Text, TextInput, View } from "react-native";
 import { ImageSelector, LocationSelector } from "../../components";
+import { addPlace, savePlace } from '../../store/actions/index';
+import { useEffect, useState } from "react";
 
 import { THEME } from '../../constants/theme/index'
-import { addPlace } from '../../store/actions/index';
 import { styles } from "./styles";
 import { useDispatch } from "react-redux";
-import { useState } from "react";
 
 const NewPlace = ({ navigation }) => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState(null);
   const [coords, setCoords] = useState(null);
   const dispatch = useDispatch()
+
+  const timer = (num )=>{
+    let count = 0;
+    while (count <= num){
+      count = count +1; 
+    }
+  }
 
   const onHandlerSubmit = () => {
     console.log("onSUBMITE")
@@ -23,10 +30,11 @@ const NewPlace = ({ navigation }) => {
       coords: coords,
     }
     console.log("pase")
-    dispatch(addPlace(datos));  
-    navigation.goBack();
-    
-    //navigation.navigate('PlaceList', { screen: "Places"  });
+    //dispatch(addPlace(datos));  
+    dispatch(savePlace(datos));
+    alert('Ubicación agregada')
+    setTimeout(() => navigation.goBack(), 2000);
+
   };
 
   const onImage = (uri) => {

@@ -1,13 +1,19 @@
 import * as Location from "expo-location";
 
 import { Alert, Button, Text, View } from "react-native";
+import { useEffect, useState } from "react";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 import MapPreview from "../map-preview/index";
-import { THEME } from '../../constants/theme/index';
+import {THEME} from "../../constants/theme/index";
 import { styles } from "./styles";
-import { useState } from "react";
 
 const LocationSelector = ({ onLocation }) => {
+  const navigation = useNavigation();
+  const route = useRoute();
+
+  const { mapLocation } = route.params || {};
+
   const [pickedLocation, setPickedLocation] = useState(null);
 
   const verifyPermissions = async () => {
@@ -18,7 +24,9 @@ const LocationSelector = ({ onLocation }) => {
     }
     return true;
   };
-  const onHandleGetLocation = async () => {
+  
+  const onHandleGetLocation = async (isMaps = false) => {
+    console.log("getLocation")
     const isLocationPermission = await verifyPermissions();
     if (!isLocationPermission) return;
 
@@ -30,14 +38,45 @@ const LocationSelector = ({ onLocation }) => {
 
     setPickedLocation({ lat: latitude, lng: longitude });
     onLocation({ lat: latitude, lng: longitude });
+    //if (isMaps) {
+    //  navigation.navigate("Maps", { coords: { lat: latitude, lng: longitude } });
+    //}
   };
+
+  const onHandlerMapsLocation = async () => {
+    console.log("mapLocation")
+    const isLocationPermission = await verifyPermissions();
+    if (!isLocationPermission) return;
+    //await onHandleGetLocation(true);
+    const location = await Location.getCurrentPositionAsync({
+      timeout: 5000,
+    });
+
+    const { latitude, longitude } = location.coords;
+    navigation.navigate("Maps", { coords: { lat: latitude, lng: longitude } });
+  };
+
+  useEffect(() => {
+    if (mapLocation) {
+      setPickedLocation(mapLocation);
+      onLocation(mapLocation);
+    }
+  }, [mapLocation]);
+
   return (
     <View style={styles.container}>
       <MapPreview location={pickedLocation} style={styles.preview}>
         <Text style={styles.text}>No hay ubicacion seleccionada</Text>
       </MapPreview>
-      <Button title="Seleccionar ubicacion" onPress={onHandleGetLocation} color={THEME.colors.primary} />
-      <Button title="Seleccionar desde mapa" onPress={() => null} color={THEME.colors.secondary} />
+      <Button 
+        title="Seleccionar ubicacion" 
+        onPress={onHandleGetLocation} 
+        color={THEME.colors.primary} />
+      <Button
+        title="Seleccionar desde mapa"
+        onPress={onHandlerMapsLocation}
+        color={THEME.colors.secondary}
+      />
     </View>
   );
 };

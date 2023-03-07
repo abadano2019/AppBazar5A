@@ -10,7 +10,7 @@ import {viewPlace} from '../../store/actions/index'
 const PlaceList = ({ navigation }) => {
   let places = useSelector((state) => state.places.places);
   const [count, setCount] = useState(0)
-  const [data, setData] = useState(null);
+  const [datosPlaces, setDatosPlaces] = useState(null);
   const dispatch = useDispatch();
 
   console.log("entre a los items de places")
@@ -21,26 +21,23 @@ const PlaceList = ({ navigation }) => {
     //const filteredPlaces = places.filter((place) => place.image !== undefined)
     const filteredPlaces = places
     console.log(filteredPlaces)
+    setCount(count + 1)
     return filteredPlaces 
   }
 
   useFocusEffect(
     useCallback(() => {
       dispatch(viewPlace());
-      
+      setCount(count => count +1)
       console.log("DATA")
       places = listPlaces()
       console.log(places)
-      
-    }, [places])
+      setDatosPlaces(places)
+      return () => {
+        setDatosPlaces([])
+      }
+    }, [datosPlaces])
   );
-
-  /*useEffect(() => {
-    const lista = listPlaces();
-    console.log("entre a use Effect")
-    setCount(count => count + 1)
-    setData(lista);
-  }, []);*/
 
   const renderItem = ({ item }) =>(  
     < PlaceItem
@@ -51,7 +48,7 @@ const PlaceList = ({ navigation }) => {
   const keyExtractor = (item) => item.id;
   return (
     <FlatList
-      data={places}
+      data={datosPlaces}
       style={styles.container}
       keyExtractor={keyExtractor}
       renderItem={renderItem}

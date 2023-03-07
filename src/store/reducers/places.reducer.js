@@ -4,7 +4,8 @@ import Place from '../../models/places';
 import { placesTypes } from '../types';
 
 const { ADD_PLACE, 
-        VIEW_PLACE } = placesTypes;
+        VIEW_PLACE,
+        SAVE_PLACE } = placesTypes;
 
 const initialState = {
     places: []
@@ -17,27 +18,21 @@ const placesReducer = (state = initialState, action) => {
         console.log('action', action.datos.title)
         console.log(action.datos.coords)
         console.log(action.datos.image)
-        const newPlace = new Place(Date.now().toString(), action.datos.title, action.datos.image, action.datos.coords);
+        console.log(action.datos.address)
+        const newPlace = new Place(Date.now().toString(), action.datos.title, action.datos.image, action.datos.coords, action.datos.address);
         state.places.push(newPlace);
         console.log(state.places)
         return state;
 
     case VIEW_PLACE:
-      /*let newCart = [];
-      
-      if (state.items.find((item) => item.id === action.item.id)) {
-        
-        newCart = state.items.map((item) => {
-          if (item.id === action.item.id) item.quantity += 1;
-          return item;
-        });
-      } else
-       {
-          const item = { ...action.item, quantity: 1 };
-          newCart = [...state.items, item];
-        }*/
       return state;
     
+    case SAVE_PLACE:
+      const newSavePlace = new Place(Date.now().toString(), action.datos.title, action.datos.image, action.datos.coords, action.datos.address);
+      state.places.push(newSavePlace);
+      console.log(state.places)
+      return state;
+
     default:
       return state;
   }
