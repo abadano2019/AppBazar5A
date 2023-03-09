@@ -1,3 +1,5 @@
+import { getPlaces, insertPlace } from "../../constants/db";
+
 import { URL_GEOCODING } from '../../constants/maps';
 import { placesTypes } from '../types';
 
@@ -27,8 +29,15 @@ export const savePlace = (datos) => {
       if (!data.results) throw new Error("No se ha podido encontrar la dirección");
 
       const address = data.results[0].formatted_address;
-
+      console.log("datos insertados")
+      console.log(datos.title)
+      console.log(datos.image)
+      console.log(datos.coords)
+      console.log(address)
+      const result = await insertPlace(datos.title, datos.image, address, datos.coords);
+      console.log(result)
       const newData ={
+        id: result.insertId,
         title: datos.title,
         image: datos.image,
         coords: datos.coords,
@@ -38,6 +47,22 @@ export const savePlace = (datos) => {
       dispatch(addPlace(newData));
     } catch (error) {
       console.log(error);
+    }
+  };
+};
+
+
+export const loadPlaces = () => {
+  return async (dispatch) => {
+    try {
+      const result = await getPlaces();
+      console.log("getPlace")
+      console.log(result.rows)
+      //dispatch(viewPlace(result.rows));
+      dispatch(viewPlace(result?.rows?._array));
+    } catch (error) {
+      console.log(error);
+      throw error;
     }
   };
 };

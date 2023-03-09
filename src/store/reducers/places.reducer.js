@@ -19,16 +19,23 @@ const placesReducer = (state = initialState, action) => {
         console.log(action.datos.coords)
         console.log(action.datos.image)
         console.log(action.datos.address)
-        const newPlace = new Place(Date.now().toString(), action.datos.title, action.datos.image, action.datos.coords, action.datos.address);
+        console.log(action.datos.id.toString())
+        const newPlace = new Place(action.datos.id.toString(), action.datos.title, action.datos.image, action.datos.coords, action.datos.address);
         state.places.push(newPlace);
         console.log(state.places)
         return state;
 
     case VIEW_PLACE:
+      console.log("---------------------------------------------------")
+      console.log(action)
+      //console.log(action.item._array)
+      console.log(action.item)
+      console.log("---------------------------------------------------")
+      state.places = action.item;
       return state;
     
     case SAVE_PLACE:
-      const newSavePlace = new Place(Date.now().toString(), action.datos.title, action.datos.image, action.datos.coords, action.datos.address);
+      const newSavePlace = new Place(action.datos.id.toString(), action.datos.title, action.datos.image, action.datos.coords, action.datos.address);
       state.places.push(newSavePlace);
       console.log(state.places)
       return state;

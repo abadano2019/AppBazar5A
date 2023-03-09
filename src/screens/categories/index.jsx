@@ -1,9 +1,9 @@
 import { FlatList, SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
+import {loadPlaces, logout} from '../../store/actions/index'
 import { useDispatch, useSelector } from 'react-redux';
 
 import { CategoryItem } from '../../components';
 import React from 'react';
-import {logout} from '../../store/actions/index'
 import { selectCategory } from '../../store/actions';
 import { styles } from './styles';
 
@@ -12,6 +12,7 @@ const Categories = ({ navigation }) => {
   const categories = useSelector((state) => state.category.categories);
   const user = useSelector((state) => state.auth.userId)
   const token = useSelector((state) => state.auth.token)
+  dispatch(loadPlaces())
   const onSelected = (item) => {
     dispatch(selectCategory(item.id));
     navigation.navigate('Products', {
