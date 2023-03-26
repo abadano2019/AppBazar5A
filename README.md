@@ -117,12 +117,31 @@ Luego se pueden ver otros tres items uno para ver las ordenes generadas por el u
 ![image](https://user-images.githubusercontent.com/48340360/227798846-5ffcd2bc-2f3b-4bd4-858f-72d0a2cc370f.png)
 
 
-En esta carpeta contamos con las paginas que la oplicación utiliza:
-* Home.jsx: encargada de mostrar el componente ItemListConteiner.jsx el cual contendrá todos los productos de la base de datos
-* Category.jsx: encargada de mostra el componente ItemDetailConteiner.jsx el cual contndrá todos los productos de la base de datos de una categoría particular.
-* Detail.jsx: encargada de mostrar los detalles de un producto en particular, para este caso se utiliza el componente ItemDetailConteiner.jsx.
-* NotFoundPage.jsx: encargada de mostrar un mensaje de error 404 en caso de no encontrar un producto.
-* Cart.jsx: encargada de desplegar por pantalla todos los elementos del carrito además de mostrar el subtotal, el iva sobre el subtotal, el costo del envío y el total de la compra, desde esta pagina se llama al formulario el cual solicita los datos del cliente para poder terminar la compra. Al confirmar la compra el cliente recibe por pantalla el nro de pedido correspondiente al id de la orden de compra cargada en la base de datos.
+En esta carpeta contamos con las vistas o paginas de la aplicacion:
+
+* auth.jsx: despliega la pagina de inicio donde un usuario se puede registar o autenticarse para el ingreso a la aplicación.
+
+* cart.jsx: despliga la pagina del carrito donde podremos ver los producos seleccionados por el usuario junto con la suma total de los productos agregados.
+
+* categories.jsx: despliega la pagina de las categorias donde se pueden seleccionar la categoría deseada para visualizar los productos correspondientes a esa categoría.
+
+* contact.jsx: despliga la pantalla de contacto de la aplicación donde se puede ingresar nombre, mail y mensaje que se desea enviar. En esta versión de la aplicación los datos quedan en redux y no son almacenado en ninguan base de datos.
+
+* maps.jsx: despliega la pantalla que proporciona la funcionalidad de elegir una dirección personalizada, distinta a la de la geolocalización del usuario.
+
+* new-place.jsx: despliega la pantalla responsable de obtener los datos necesarios para agregar una nueva dirección del usuario, se ingresa nombre, una foto tomada desde el dispositivo y una localización.
+
+* order-detail.jsx: despliega la pantalla con los productos correspondientes a una orden seleccionada por el usuario.
+
+* orders.jsx: despliega el historico de ordenes de un usuario
+
+* place-detail.jsx: despliega el detalla de una dirección seleccionada por el usuario de la lista de direcciones disponibles.
+
+* place-list.jsx: despliega la lista de dirección disponibles de un usuario.
+
+* product-detail.jsx: despliega el detalle de un producto seleccionado por el usuario, desde esta pantalla se puede agregar el producto al carrito.
+
+* products.jsx: despliega la lista de productos para una categoría determinada seleccionada por el usuario.
 
 #### store
 
@@ -134,17 +153,34 @@ En esta carpeta contamos con las paginas que la oplicación utiliza:
 
 ![image](https://user-images.githubusercontent.com/48340360/227798969-81dbed76-08c9-468e-a344-399950e56414.png)
 
-
-
-La carpeta sass cuenta con un archivo App.sass el cual contiene todos los estilos de la aplicación
+la carpeta store cuenta con toda la estructura para el uso de redux-thunk, se utiliza para los usuarios, el carrito, las categorias, para el formulario de contacto, para las ordenes, para las direcciones y para los productos.
 
 ### Otros archivos
 
-#### App.js
-Contiene la estructura de ruteo de la aplicación y se define el contexto del contexto del carrito de compras.
+Dentro de la carpeta assets podemos encontrar los iconos de la aplicación y la fuente utilizada
 
-#### .env
-Contiene las variables de entorno necesarias para el funcionamiento de la aplicación, las variables de conexión con la base firebase las cuales deberán ser seteadas.
+![image](https://user-images.githubusercontent.com/48340360/227800339-7429ca8c-fb4b-4bd5-8def-9faa2fa8124f.png)
+
+
+#### fonts
+
+![image](https://user-images.githubusercontent.com/48340360/227800377-32d6f434-a793-4500-9433-8eb80d7a9925.png)
+
+#### icono
+
+<img src="https://github.com/abadano2019/AppBazar5A/blob/master/assets/icon.png" width="80" height="80">
+
+#### splash
+
+<img src="https://github.com/abadano2019/AppBazar5A/blob/master/assets/splash.png" width="80" height="80">
+
+#### adaptive-icon
+
+<img src="https://github.com/abadano2019/AppBazar5A/blob/master/assets/adaptive-icon.png" width="80" height="80">
+
+#### favicon
+
+<img src="https://github.com/abadano2019/AppBazar5A/blob/master/assets/favicon.png" width="80" height="80">
 
 <!-- ROADMAP -->
 ## Mejoras
