@@ -198,7 +198,7 @@ entre otras cosas
 
 # ANEXO
 
-Proyecto desarrollado utilizando Expo [Create an app using Expo](https://github.com/abadano2019/AppBazar5A).
+Proyecto desarrollado utilizando Expo [Create an app using Expo](https://docs.expo.dev/tutorial/create-your-first-app/).
 
 Testeado en Android Studio Dolphin con los siguiente dispositivos virtuales:
 
