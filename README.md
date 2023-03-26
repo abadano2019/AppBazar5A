@@ -51,16 +51,19 @@ A continuación se marcan los pasos para poder utilizar la aplicación con datos
 
 6. Clonar o descargar el repositorio, antes de ejecutar este comando debe posicionarse en la carpeta donde desea clonar el repositorio
    ```sh
-   git clone https://github.com/abadano2019/bazar5A.git
+   git clone https://github.com/abadano2019/AppBazar5A.git
    ```
-3. Instalar NPM packages
+7. Instalar NPM packages
    ```sh
    npm install
    ```
-4. En caso de querer utilizar una base de datos propia ingresar los datos proporcionados por firebase en el archivo `config.js`
+8. En caso de querer utilizar datos propios modificar los archivos categories.js y products.js ubicados en la carpeta src/constants/data 
   
 
 ## Estructura de carpetas
+
+![image](https://user-images.githubusercontent.com/48340360/227794432-da8838fd-2db1-4703-9735-69af14b1a792.png)
+
 
 Dentro de la carpeta src tenemos la siguiente esctrucutra, una carpeta api con los archivos necesarios para la conexión a la base de datos, una carpeta components donde se encuentran los archivos jsx, componentes a renderizar, una carpeta context en la cual tenemos creado un archivo con el contexto del carrito, una carpeta js para clases varias en este caso tenemos la clase alertas.js para la utilización de alertas de sweetalerts, una carpeta pages con las páginas disponibles de la aplicación, una carpeta sass con el archivo App.sass con todos los estilos.
 
