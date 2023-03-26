@@ -172,7 +172,7 @@ Dentro de la carpeta assets podemos encontrar los iconos de la aplicación y la 
 
 #### splash
 
-<img src="https://github.com/abadano2019/AppBazar5A/blob/master/assets/splash.png" width="80" height="80">
+<img src="https://github.com/abadano2019/AppBazar5A/blob/master/assets/splash.png" width="160" height="160">
 
 #### adaptive-icon
 
@@ -180,7 +180,7 @@ Dentro de la carpeta assets podemos encontrar los iconos de la aplicación y la 
 
 #### favicon
 
-<img src="https://github.com/abadano2019/AppBazar5A/blob/master/assets/favicon.png" width="80" height="80">
+<img src="https://github.com/abadano2019/AppBazar5A/blob/master/assets/favicon.png" width="40" height="40">
 
 <!-- ROADMAP -->
 ## Mejoras
