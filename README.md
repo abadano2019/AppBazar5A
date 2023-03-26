@@ -12,11 +12,11 @@
 <!-- ABOUT THE PROJECT -->
 ## Introducción
 
-El sitio Bazar 5A surge como un proyecto familiar en donde se vuelcan muchos años de experiencia en venta de articulos de Bazar. Consta de varias secciones como ser cristalería, electrodomésticos, cocina, vajilla entre otros, pudiendo adaptarse a las necesidades del mercado. Dentro de las funcionalidades un cliente puede ingresar a la pagina, navegar entre las opciones disponibles, seleccionar un producto, ver los detalles particulares del producto, agregarlo al carrito de compra.
+AppBazar5A surge como un proyecto familiar en donde se vuelcan muchos años de experiencia en venta de artículos de Bazar. Consta de varias secciones como ser cristalería, electrodomésticos, cocina, vajilla entre otros, pudiendo adaptarse a las necesidades del mercado. Dentro de las funcionalidades un cliente puede ingresar a la vista de categorías, navegar entre las opciones de categorías disponibles, seleccionar una y ver sus productos asociados, ver los detalles de los productos, agregarlos al carrito de compra, emitir órdenes, ver el histórico de ordenes, enviar mensajes, agregar direcciones de envío, listarlas, ver el detalle de una en particular y eliminarlas de la lista de direcciones. 
 
-### Tecnologias utilizadas
+### Tecnologías utilizadas
 
-Dentro de las tecnologías utilizadas para el desarrollo de la aplicación podemso encontrar:
+Dentro de las tecnologías utilizadas para el desarrollo de la aplicación podemos encontrar:
 
 ##### * React Native
 ##### * Java Script
@@ -28,16 +28,14 @@ Dentro de las tecnologías utilizadas para el desarrollo de la aplicación podem
 ##### * Utilización de la Camara de los dispositivos
 ##### * Utilización de Geolocalización de Google
 
-React Native y Expo como herramientas base para la elaboración de la aplicación, Java Script para todo lo relacionado a lógica de decisión, Firebase se utilizó como repositorio de imagenes, base de datos y medio de registro y autenticación de usuarios, SQLite como base de datos local y librerias especificas para la utilización de la camara del dispositivo y la geolocalización. 
+React Native y Expo como herramientas base para la elaboración de la aplicación, Java Script para todo lo relacionado a lógica de decisión, Firebase se utilizó como repositorio de imagenes, base de datos y medio de registro y autenticación de usuarios, SQLite como base de datos local y librerías específicas para la utilización de la cámara del dispositivo y la geolocalización. 
 
 <!-- GETTING STARTED -->
 ## Instalación
 
-A continución se presentan instrucciónes para la utilización de la aplicación de forma local.
-
 ### Requisitos previos
 
-Se recomienda el uso de Visual Studio Code para la visualización y administración del codigo, se debe tener instalado Node JS, en caso de querer utilizar datos propios, se debe utilizar una cuenta de gmail para la configuración de firebase y el servicio de google maps.
+Se recomienda el uso de Visual Studio Code para la visualización y administración del código, se debe tener instalado Node JS, en caso de querer utilizar datos propios, se debe utilizar una cuenta de gmail para la configuración de firebase y el servicio de google maps.
 
 ### Pasos a seguir
 
@@ -45,7 +43,7 @@ A continuación se marcan los pasos para poder utilizar la aplicación con datos
 
 1. Configurar el servicio de realtime database en firebase. 
 2. Configurar el servicio de autenticación de firebase por intermedio de correo electónico.
-3. En caso de querar utilizar imagenes propias se deberá cambiar la url en el archivo productos.js ubicado en la carpeta src/constants/data
+3. En caso de querer utilizar imágenes propias se deberá cambiar la url en el archivo productos.js ubicado en la carpeta src/constants/data
 4. Configurar los servicios necesarios para el uso de la api de geolocalización de google.maps 
 5. De las configuraciones vista en los puntos del 1 al 4 se deben obtener 2 api key una de firebase y otra de google.maps
 
@@ -65,22 +63,22 @@ A continuación se marcan los pasos para poder utilizar la aplicación con datos
 ![image](https://user-images.githubusercontent.com/48340360/227794486-d415326e-6c50-48be-8f82-f37c6beb055a.png)
 
 
-Dentro de la carpeta src tenemos la siguiente esctrucutra, una carpeta components donde se encuentran los componentes de la aplicación, una carpeta con el nombre constants donde se encuentaran los datos, la configuración para la conexición a firebase, la conexión al servicio de google.maps y la definición de colotes para ser utilizados por los estilos de los distintos componentes y vistas, una carpeta models donde se encuentran los distintos modelos a utilizar por las bases de datos, una carpeta navigation con toda la estructura y archivos para la navegación de las pantallas por intermedio de @react-navigation, una carpeta con el nombre screens con todas las vistas que la apliación utiliza, una carpta con el nombre Store con la implementación de 'redux-thunk' y una carpeta utils con elementos de uso reutilizable como ser el formulario de inicio y registro de sesión.
+Dentro de la carpeta src tenemos la siguiente estructura, una carpeta components donde se encuentran los componentes de la aplicación, una carpeta con el nombre constants donde se encuentran los datos, la configuración para la conexión a firebase, la conexión al servicio de google.maps y la definición de colotes para ser utilizados por los estilos de los distintos componentes y vistas, una carpeta models donde se encuentran los distintos modelos a utilizar por las bases de datos, una carpeta navigation con toda la estructura y archivos para la navegación de las pantallas por intermedio de @react-navigation, una carpeta con el nombre screens con todas las vistas que la aplicación utiliza, una carpeta con el nombre Store con la implementación de 'redux-thunk' y una carpeta utils con elementos de uso reutilizable como ser el formulario de inicio y registro de sesión.
 
 #### components
 
 ![image](https://user-images.githubusercontent.com/48340360/227795274-ca088124-6a0d-486a-a4de-fd4999d8a43c.png)
 
 Dentro de la carpeta components podemos destacar los siguientes archivos:
-* cart-item.jsx: encargado de desplegar un elemento del carrito con los botones de mas y menos para aumentar o disminuir la cantidad del producto seleccionado, tambien cuenta con la posibilidad de borrarse del carrito.
+* cart-item.jsx: encargado de desplegar un elemento del carrito con los botones de mas y menos para aumentar o disminuir la cantidad del producto seleccionado, también cuenta con la posibilidad de borrarse del carrito.
 
 * category-item.jxs: encargado de desplegar una tarjeta con el nombre de una categoría. El dato se encuentra disponible en el archivo categories.js en la ruta /src/constants/data
 
-* image-selector.jsx: encargado de verificar permisos de usa de la camara del dispositivo y posterior toma de imagen.
+* image-selector.jsx: encargado de verificar permisos de usa de la cámara del dispositivo y posterior toma de imagen.
 
 * order-item.jsx: encargado de desplegar la información de una orden, esta información se encuentra en firebase en rtdb por usuario de generación de orden.
 
-* place-item.jsx: encargado de desplegar la información de una dirección cargada por el usuario, la información de guardea en SQLite, la dirección puede ser borrada por intermedio del icono de borrado.
+* place-item.jsx: encargado de desplegar la información de una dirección cargada por el usuario, la información de guarda en SQLite, la dirección puede ser borrada por intermedio del icono de borrado.
 
 * product-item.jsx: encargado de desplegar la información de un producto para la vista por categorías.
 
@@ -88,9 +86,9 @@ Dentro de la carpeta components podemos destacar los siguientes archivos:
 
 ![image](https://user-images.githubusercontent.com/48340360/227796245-eb228be7-b68c-4015-bf43-046904765d8a.png)
 
-* data: contiene archivos .js con la información necesaria para el renderizado de lo componentes de productos y categorias, además cuenta con otros archivos de proebs en desarrollo.
+* data: contiene archivos .js con la información necesaria para el renderizado de lo componentes de productos y categorias, además cuenta con otros archivos de prueba en desarrollo.
 * firebase: cuenta con la configuración necesaria para la conexión con firebase para el uso de la rtdb y el servicio de autenticación y registro de usuarios. 
-* db: cuenta con la configuración necesaria para la conexión con SQLite y las transacciones de inicialización, inserción, busqueda y borrado de datos que la aplicación utiliza.
+* db: cuenta con la configuración necesaria para la conexión con SQLite y las transacciones de inicialización, inserción, búsqueda y borrado de datos que la aplicación utiliza.
 * maps: cuenta con la configuración necesaria para la conexión con el servicio de google.maps
 * theme: cuenta con las definiciones de colores utilizada por los estilos de los componentes.
 
@@ -100,32 +98,32 @@ Dentro de la carpeta components podemos destacar los siguientes archivos:
 
 * places.js: archivos con el modelo especifico utilizado por SQLite para las direcciones cargados por los usuarios.
 
-Nota: falta integrar la definción de los restantes modelos de datos 
+Nota: falta integrar la definición de los restantes modelos de datos 
 
 #### navigation
 
 ![image](https://user-images.githubusercontent.com/48340360/227796925-c6661f5a-eaaf-405b-9e93-59cc1016f376.png)
 
-La aplicación cuanta con 2 stack de navegación uno para las direcciones, donde se dan de alta, se listan y se pueden ver en detalles y otro para las categorias de los productos donde se pueden listar los productos por categoría y luego ver en detalle. El primer stack se encuenta bajo el item del menú (Tab de navegación) shop y el segundo stack para el item places.
+La aplicación cuanta con 2 stack de navegación uno para las direcciones, donde se dan de alta, se listan y se pueden ver en detalles y otro para las categorías de los productos donde se pueden listar los productos por categoría y luego ver en detalle. El primer stack se encuentra bajo el item del menú (Tab de navegación) shop y el segundo stack para el item places.
 
 ![image](https://user-images.githubusercontent.com/48340360/227798283-a0e58de9-b321-49e1-97e1-bf0915371e95.png)
 
-Luego se pueden ver otros tres items uno para ver las ordenes generadas por el usuario, el historico de órdenes (se guardan en una base de dato de firebase), otro para ver el carrito del usuario, no tienen persistencia una vez que se cierra la aplicación el carrito se borra y un formulario de contacto simple. 
+Luego se pueden ver otros tres items uno para ver las ordenes generadas por el usuario, el histórico de órdenes (se guardan en una base de dato de firebase), otro para ver el carrito del usuario, no tienen persistencia una vez que se cierra la aplicación el carrito se borra y un formulario de contacto simple. 
 
 #### vistas
 
 ![image](https://user-images.githubusercontent.com/48340360/227798846-5ffcd2bc-2f3b-4bd4-858f-72d0a2cc370f.png)
 
 
-En esta carpeta contamos con las vistas o paginas de la aplicacion:
+En esta carpeta contamos con las vistas o páginas de la aplicación:
 
-* auth.jsx: despliega la pagina de inicio donde un usuario se puede registar o autenticarse para el ingreso a la aplicación.
+* auth.jsx: despliega la página de inicio donde un usuario se puede registrar o autenticarse para el ingreso a la aplicación.
 
-* cart.jsx: despliga la pagina del carrito donde podremos ver los producos seleccionados por el usuario junto con la suma total de los productos agregados.
+* cart.jsx: despliga la página del carrito donde podremos ver los producos seleccionados por el usuario junto con la suma total de los productos agregados.
 
-* categories.jsx: despliega la pagina de las categorias donde se pueden seleccionar la categoría deseada para visualizar los productos correspondientes a esa categoría.
+* categories.jsx: despliega la página de las categorías donde se pueden seleccionar la categoría deseada para visualizar los productos correspondientes a esa categoría.
 
-* contact.jsx: despliga la pantalla de contacto de la aplicación donde se puede ingresar nombre, mail y mensaje que se desea enviar. En esta versión de la aplicación los datos quedan en redux y no son almacenado en ninguan base de datos.
+* contact.jsx: despliega la pantalla de contacto de la aplicación donde se puede ingresar nombre, mail y mensaje que se desea enviar. En esta versión de la aplicación los datos quedan en redux y no son almacenado en ninguna base de datos.
 
 * maps.jsx: despliega la pantalla que proporciona la funcionalidad de elegir una dirección personalizada, distinta a la de la geolocalización del usuario.
 
@@ -133,7 +131,7 @@ En esta carpeta contamos con las vistas o paginas de la aplicacion:
 
 * order-detail.jsx: despliega la pantalla con los productos correspondientes a una orden seleccionada por el usuario.
 
-* orders.jsx: despliega el historico de ordenes de un usuario
+* orders.jsx: despliega el histórico de ordenes de un usuario
 
 * place-detail.jsx: despliega el detalla de una dirección seleccionada por el usuario de la lista de direcciones disponibles.
 
@@ -153,7 +151,7 @@ En esta carpeta contamos con las vistas o paginas de la aplicacion:
 
 ![image](https://user-images.githubusercontent.com/48340360/227798969-81dbed76-08c9-468e-a344-399950e56414.png)
 
-la carpeta store cuenta con toda la estructura para el uso de redux-thunk, se utiliza para los usuarios, el carrito, las categorias, para el formulario de contacto, para las ordenes, para las direcciones y para los productos.
+la carpeta store cuenta con toda la estructura para el uso de redux-thunk, se utiliza para los usuarios, el carrito, las categorías, para el formulario de contacto, para las ordenes, para las direcciones y para los productos.
 
 ### Otros archivos
 
@@ -189,7 +187,7 @@ Esta es una primera versión del proyecto AppBazar5A, en el cual quedan para def
 
 * Agregar los modelos de datos que faltan e impactar datos contra firebase.
 * Generar una vista para ampliar los datos de registro de los usuarios.
-* Generar modulo de mantenimiento de los productuos para poder modificar y eliminar los productos existente y agregar nuevos.
+* Generar módulo de mantenimiento de los productos para poder modificar y eliminar productos existente y agregar nuevos.
 * Utilizar el template form generado para la autorización para el formulario de contacto.
 * Publicar la aplicación al menos en Play Store de Google. 
 * Generar un modelo y vista para los productos favoritos o deseados del usuario.
@@ -222,8 +220,8 @@ Para generar un ejecutable para subir a producción ejecute el comando
 
 previo registro de un usuario en el sitio de expo dev https://expo.dev/
 
-Para mayor información dirigirse a la siguiente pagina (ANDROID): [Build APKs for Android Emulators and devices](https://docs.expo.dev/build-reference/apk/).
-o dirigirse a la siguiente pagina (IOS): [Build for iOS Simulators](https://docs.expo.dev/build-reference/simulators/).
+Para mayor información dirigirse a la siguiente página (ANDROID): [Build APKs for Android Emulators and devices](https://docs.expo.dev/build-reference/apk/).
+o dirigirse a la siguiente página (IOS): [Build for iOS Simulators](https://docs.expo.dev/build-reference/simulators/).
 
 ## Learn More
 
