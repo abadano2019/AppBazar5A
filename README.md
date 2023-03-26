@@ -28,7 +28,7 @@ Dentro de las tecnologías utilizadas para el desarrollo de la aplicación podem
 ##### * Utilización de la Camara de los dispositivos
 ##### * Utilización de Geolocalización de Google
 
-React Native y Expo como herramientas base para la elaboración de la aplicación, Java Script para todo lo relacionado a lógica de decisión, Firebase se utilizó como repositorio de imagenes, base de datos y medio de registro y autenticación de usuarios, SQLite como base de datos local y librerias especificas para la utilización de la camara del dispositivo y la geolocalización- 
+React Native y Expo como herramientas base para la elaboración de la aplicación, Java Script para todo lo relacionado a lógica de decisión, Firebase se utilizó como repositorio de imagenes, base de datos y medio de registro y autenticación de usuarios, SQLite como base de datos local y librerias especificas para la utilización de la camara del dispositivo y la geolocalización. 
 
 <!-- GETTING STARTED -->
 ## Instalación
