@@ -88,30 +88,29 @@ Dentro de la carpeta components podemos destacar los siguientes archivos:
 
 ![image](https://user-images.githubusercontent.com/48340360/227796245-eb228be7-b68c-4015-bf43-046904765d8a.png)
 
+* data: contiene archivos .js con la información necesaria para el renderizado de lo componentes de productos y categorias, además cuenta con otros archivos de proebs en desarrollo.
+* firebase: cuenta con la configuración necesaria para la conexión con firebase para el uso de la rtdb y el servicio de autenticación y registro de usuarios. 
+* db: cuenta con la configuración necesaria para la conexión con SQLite y las transacciones de inicialización, inserción, busqueda y borrado de datos que la aplicación utiliza.
+* maps: cuenta con la configuración necesaria para la conexión con el servicio de google.maps
+* theme: cuenta con las definiciones de colores utilizada por los estilos de los componentes.
 
-* AddWidget.jsx: componente que contiene un icono con el simbolo de +.
-* SubstractWidget.jsx: componente que contiene un icono con el simbolo de -.
-* CartWidget.jsx: compoente que contiene un icono con un carrito de compras. 
-* CounterCart.jsx: componente que basicamente suma y resta una variable controlando que no exceda un stock dado por parametro y que no sea menor o igual a cero. Es utilizado para el detalle de los productos para poder agregar una cantidad determinada de productos al carrito.
-* Footer.jsx: componente que renderiza los datos del footer del sitio
-* FormCompra.jsx: componente encargado de cargar la orden de compra de un cliente a la base de datos, el formulario solicita el nombre, apellido, teléfono, email y email de verificación del cliente, por intermedio del contexto del carrito también se toman los datos de los productos para cargar a la base de datos. La colección utilizada tiene el nombre de orders y en caso de estar vacia se crea. El formulario es modal, el botón de confirmar compra no se activa hasta que no tenga todos los datos completos, en caso de que los campos Email y verificar Email sale un mensaje de error como que los mismos no coinciden, tembién se controla el formato de texto ingresado para el email por intermedio de expresiones regulares.
-* Item.jsx: componente encargado de desplegar información de forma visual de los productos cargados en la base de datos. La información se despliega dentro de cards en las paginas de categorias y home.
-* ItemDescriptionExt.jsx: componente encargado de presentar información extendida de los productos, es utilizado por el componente ItemDetail.jsx
-* ItemDetail.jsx: componente encargado de presentar de forma detallada las caracteristicas de un producto, similar al componente Item.jsx pero con más información, con el componente counterCart y desplegando la información en toda la pantalla.
-* ItemDetailContainer.jsx: componente encargado de presentar el compontente itemDetail.jsx, previo a la validación de la existencia del mismo, en caso contrario mostrará un mensaje de error 404, también presenta el componete LoaderClock para mostrar el procesamiento de información.
-* ItemListContainer.jsx: componente encargado de pedir y recibir la información de la base de datos, en caso de ser utilizado por la pagina home recibe toda la información y en caso de ser llamado por la pagina Category recibe y muestra la información para una categoría particular.
-* Loader.jsx: componente que despliega la leyenda cargando..., con el fin de mostrar el procesamiento de información.
-* LoarderClock.jsx: componete similar al componente Loader.jsx con la diferencia que en este se muestra un reloj con sus ajujas girando.
-* NavBar.jsx: componente encargado de presentar el header de la aplicación, la barra superior con sus links incluyendo icono de la pagina y el icono del carrigo.
-* Tag.jsx: componente encargado de mostrar una breve información y muy especifica del producto. Es utilizado por el componente Item.jsx.
-* UserLayout.jsx: componente para la utilización del componente Route
+#### models
 
-#### Context
+![image](https://user-images.githubusercontent.com/48340360/227796737-23bfa035-bd2c-473b-a11c-48c41c0f5e67.png)
 
-Con el fin de poder mostrar la cantidad de elementos que tiene el carro de compras de una forma más simple y evitando el flujo de datos entre compontes es que se utiliza un contexto para el carro de compras. Cada vez que se agrega un elemento al carrito de compras se utiliza el contexto para agregarlo al pedido final. Además el contexto del carro cuenta con el calculo del precio total, el iva de la compra total, el precio del envio y el total de la compra.
+* places.js: archivos con el modelo especifico utilizado por SQLite para las direcciones cargados por los usuarios.
 
-#### js
-En esta carpeta se presenta un archivo el cual implemente la biblioteca de sweetAlert para poder mostrar mensajes de forma modal por pantalla. Se implementan dos formas posibles de presentar mensajes, una de forma animada el cual recibe por parametro el mensaje a mostrar y el icono que se desea ejemplo: error, sucess, warning y otro simple que solo muestar el mensaje que se desea mostrar.  
+Nota: falta integrar la definción de los restantes modelos de datos 
+
+#### navigation
+
+![image](https://user-images.githubusercontent.com/48340360/227796925-c6661f5a-eaaf-405b-9e93-59cc1016f376.png)
+
+La aplicación cuanta con 2 stack de navegación uno para las direcciones, donde se dan de alta, se listan y se pueden ver en detalles y otro para las categorias de los productos donde se pueden listar los productos por categoría y luego ver en detalle. El primer stack se encuenta bajo el item del menú (Tab de navegación) shop y el segundo stack para el item places.
+
+![image](https://user-images.githubusercontent.com/48340360/227798283-a0e58de9-b321-49e1-97e1-bf0915371e95.png)
+
+Luego se pueden ver otros tres items uno para ver las ordenes generadas por el usuario, el historico de órdenes (se guardan en una base de dato de firebase), otro para ver el carrito del usuario, no tienen persistencia una vez que se cierra la aplicación el carrito se borra y un formulario de contacto simple. 
 
 #### pages 
 En esta carpeta contamos con las paginas que la oplicación utiliza:
