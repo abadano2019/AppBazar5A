@@ -221,7 +221,7 @@ Ejecute el comando npm install para instalar todas las dependencias del archivo 
 
 ### `build`
 
-Para generar un ejecutable para subir a producción ejecute el comando 
+Para generar un ejecutable (apk) para utilizar en dispositivos Android ejecute el comando 
 
   ```sh
    eas build -p android --profile prod
