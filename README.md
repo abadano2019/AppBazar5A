@@ -112,7 +112,11 @@ La aplicación cuanta con 2 stack de navegación uno para las direcciones, donde
 
 Luego se pueden ver otros tres items uno para ver las ordenes generadas por el usuario, el historico de órdenes (se guardan en una base de dato de firebase), otro para ver el carrito del usuario, no tienen persistencia una vez que se cierra la aplicación el carrito se borra y un formulario de contacto simple. 
 
-#### pages 
+#### vistas
+
+![image](https://user-images.githubusercontent.com/48340360/227798846-5ffcd2bc-2f3b-4bd4-858f-72d0a2cc370f.png)
+
+
 En esta carpeta contamos con las paginas que la oplicación utiliza:
 * Home.jsx: encargada de mostrar el componente ItemListConteiner.jsx el cual contendrá todos los productos de la base de datos
 * Category.jsx: encargada de mostra el componente ItemDetailConteiner.jsx el cual contndrá todos los productos de la base de datos de una categoría particular.
@@ -120,7 +124,18 @@ En esta carpeta contamos con las paginas que la oplicación utiliza:
 * NotFoundPage.jsx: encargada de mostrar un mensaje de error 404 en caso de no encontrar un producto.
 * Cart.jsx: encargada de desplegar por pantalla todos los elementos del carrito además de mostrar el subtotal, el iva sobre el subtotal, el costo del envío y el total de la compra, desde esta pagina se llama al formulario el cual solicita los datos del cliente para poder terminar la compra. Al confirmar la compra el cliente recibe por pantalla el nro de pedido correspondiente al id de la orden de compra cargada en la base de datos.
 
-#### sass 
+#### store
+
+![image](https://user-images.githubusercontent.com/48340360/227798900-d28078ab-0b8c-441e-8b97-0b7af89cb666.png)
+
+![image](https://user-images.githubusercontent.com/48340360/227798921-8bfc52b5-94e8-40e8-b827-b8953b9dacec.png)
+
+![image](https://user-images.githubusercontent.com/48340360/227798951-b6d5bbc8-7288-4512-82b1-b2614d8c6bfa.png)
+
+![image](https://user-images.githubusercontent.com/48340360/227798969-81dbed76-08c9-468e-a344-399950e56414.png)
+
+
+
 La carpeta sass cuenta con un archivo App.sass el cual contiene todos los estilos de la aplicación
 
 ### Otros archivos
