@@ -3,18 +3,16 @@ import { THEME } from '../../constants/theme';
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: THEME.colors.background,
-    paddingTop:50,
-    paddingHorizontal:30,
-    MarginVertical:10,
+    flex: 1,
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
   },
-  textContainer:{
-    alignContent:"center",
-    alignItems:"center",
+  textContainer: {
+    alignContent: 'center',
+    alignItems: 'center',
     backgroundColor: THEME.colors.white,
     marginTop: 20,
-    
   },
 
   listContainer: {
@@ -42,14 +40,13 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: 'Bitter-Medium',
   },
-  textFormat:{
+  textFormat: {
     color: THEME.colors.primary,
     fontSize: 14,
     fontFamily: 'Bitter-Medium',
-    borderWidth:1.5,
+    borderBottomWidth: 1,
     width: 300,
-    padding:5,
-    
+    padding: 5,
   },
   totalPrice: {
     color: THEME.colors.white,

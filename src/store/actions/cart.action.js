@@ -57,7 +57,7 @@ export const confirmOrder = (items, total, user) => {
         result,
       });
     } catch (error) {
-      console.log('error',error)
+      console.log('Error Action Cart ConfirmOrder',error)
       dispatch({
         type: CONFIRM_ORDER,
         error,

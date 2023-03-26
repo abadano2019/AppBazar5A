@@ -13,8 +13,6 @@ const contactReducer = (state = initialState, action) => {
      
       id = state.messages.length + 1
       state.messages.push({id: id, datos: action.datos})
-      console.log("Mensajes en Redux:")
-      console.log(state.messages)
       return state
       
     default:

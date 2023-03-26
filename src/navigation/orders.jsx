@@ -21,10 +21,7 @@ const OrdersNavigator = () => {
           color: THEME.colors.title,
         },
       }}>
-      <Stack.Screen 
-        name="Orders" 
-        component={Orders} 
-      />  
+      <Stack.Screen name="Orders" component={Orders} />
       <Stack.Screen
         name="OrderDetail"
         component={OrderDetail}
@@ -32,7 +29,6 @@ const OrdersNavigator = () => {
           title: route.params.title,
         })}
       />
-      
     </Stack.Navigator>
   );
 };

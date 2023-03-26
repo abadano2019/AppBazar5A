@@ -1,42 +1,38 @@
 /* eslint-disable no-case-declarations */
-import { CART } from '../../constants/data/index';
 import { cartTypes } from '../types';
 import { sumTotal } from '../../utils/functions';
 
-const { VIEW_CART, 
-        ADD_TO_CART, 
-        REMOVE_FROM_CART, 
-        ADD_QUANTITY,
-        CONFIRM_ORDER, 
-        SUBSTRACT_QUANTITY } = cartTypes;
+const {
+  VIEW_CART,
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+  ADD_QUANTITY,
+  CONFIRM_ORDER,
+  SUBSTRACT_QUANTITY,
+} = cartTypes;
 
 const initialState = {
   items: [],
-  //carts: CART,
-  //selected: null,
   total: 0,
 };
 
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
-
     case VIEW_CART:
       return state;
 
     case ADD_TO_CART:
       let newCart = [];
-      
+
       if (state.items.find((item) => item.id === action.item.id)) {
-        
         newCart = state.items.map((item) => {
           if (item.id === action.item.id) item.quantity += 1;
           return item;
         });
-      } else
-       {
-          const item = { ...action.item, quantity: 1 };
-          newCart = [...state.items, item];
-        }
+      } else {
+        const item = { ...action.item, quantity: 1 };
+        newCart = [...state.items, item];
+      }
       return {
         ...state,
         items: newCart,
@@ -49,9 +45,8 @@ const cartReducer = (state = initialState, action) => {
         items: filteredCart,
         total: sumTotal(filteredCart),
       };
-    
+
     case ADD_QUANTITY:
-            
       newCart = state.items.map((item) => {
         if (item.id === action.id) item.quantity += 1;
         return item;
@@ -63,31 +58,26 @@ const cartReducer = (state = initialState, action) => {
       };
 
     case SUBSTRACT_QUANTITY:
-            
       newCart = state.items.map((item) => {
-        if ((item.id === action.id) && (item.quantity > 1 )) item.quantity -= 1;
+        if (item.id === action.id && item.quantity > 1) item.quantity -= 1;
         return item;
       });
       return {
         ...state,
         items: newCart,
         total: sumTotal(newCart),
-    };
+      };
 
     case CONFIRM_ORDER:
-
-      console.log("entre")
       return {
         ...state,
         items: [],
         total: 0,
       };
 
-      
     default:
       return state;
   }
 };
-
 
 export default cartReducer;

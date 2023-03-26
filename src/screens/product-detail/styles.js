@@ -8,11 +8,17 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  title: {
-    fontSize: 16,
+  titleFormat: {
+    fontSize: 22,
     fontFamily: 'Bitter-Regular',
     color: THEME.colors.white,
     padding: 10,
+  },
+  title: {
+      fontSize: 16,
+      fontFamily: 'Bitter-Regular',
+      color: THEME.colors.white,
+      padding: 10,
   },
   image:{
     height:250,

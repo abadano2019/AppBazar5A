@@ -2,7 +2,7 @@ import { FB_URL_AUTH_SIGN_IN, FB_URL_AUTH_SIGN_UP } from '../../constants/fireba
 
 import { authTypes } from '../types';
 
-const { SIGN_UP, SIGN_IN, LOG_OUT } = authTypes;
+const { SIGN_UP, SIGN_IN, LOG_OUT, SIGN_IN_ERROR, SIGN_UP_ERROR } = authTypes;
 
 export const signUp = (email, password) => {
   return async (dispatch) => {
@@ -20,7 +20,10 @@ export const signUp = (email, password) => {
       });
 
       if (!response.ok) {
-        throw new Error('Something went wrong!');
+        dispatch({
+          type: SIGN_UP_ERROR,
+        });
+        throw new Error('Something went wrong in SingUp!');
       }
 
       const data = await response.json();
@@ -31,7 +34,8 @@ export const signUp = (email, password) => {
         userId: data.localId,
       });
     } catch (error) {
-      throw error;
+      console.log('Error Action SingUp', error);
+      
     }
   };
 };
@@ -51,23 +55,36 @@ export const signIn = (email, password) => {
         }),
       });
 
-         
+      if (!response.ok) {
+        console.log("Error en SingIn")
+        dispatch({
+          type: SIGN_IN_ERROR,
+        });
+        throw new Error('Error: Something went wrong in SingIn!');
+      }
       const data = await response.json();
-      
+
       dispatch({
         type: SIGN_IN,
         token: data.idToken,
         userId: data.localId,
       });
-      
     } catch (error) {
-      console.log("error",error)
-      throw error;
+      console.log('Error Action SingIn', error);
     }
   };
 };
 
-export const logout = () => ({
-  type: LOG_OUT,
-});
-
+export const logout = () => {
+  return async (dispatch) => {
+    try {
+      dispatch({
+        type: LOG_OUT,
+        token: null,
+        userId: null,
+      });
+    } catch (error) {
+      console.log('Error Action Logout', error);
+    }
+  };
+};

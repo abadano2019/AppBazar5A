@@ -1,18 +1,30 @@
-import { getPlaces, insertPlace } from "../../constants/db";
+import { deletePlace, getPlaceById, getPlaces, insertPlace } from "../../constants/db";
 
 import { URL_GEOCODING } from '../../constants/maps';
 import { placesTypes } from '../types';
 
 const { ADD_PLACE,
-        VIEW_PLACE } = placesTypes;
+        VIEW_PLACE,
+        VIEW_PLACE_BY_ID,
+        DEL_PLACE } = placesTypes;
 
 export const addPlace = (datos) => ({
   type: ADD_PLACE,
   datos,
 });
 
+export const delPlace = (id) => ({
+  type: DEL_PLACE,
+  id,
+})
+
 export const viewPlace = (item) => ({
   type: VIEW_PLACE,
+  item,
+});
+
+export const viewPlaceById = (item) => ({
+  type: VIEW_PLACE_BY_ID,
   item,
 });
 
@@ -29,15 +41,11 @@ export const savePlace = (datos) => {
       if (!data.results) throw new Error("No se ha podido encontrar la dirección");
 
       const address = data.results[0].formatted_address;
-      console.log("datos insertados")
-      console.log(datos.title)
-      console.log(datos.image)
-      console.log(datos.coords)
-      console.log(address)
-      const result = await insertPlace(datos.title, datos.image, address, datos.coords);
-      console.log(result)
+      const result = await insertPlace(datos.user, datos.title, datos.image, address, datos.coords);
+      
       const newData ={
         id: result.insertId,
+        user: datos.user,
         title: datos.title,
         image: datos.image,
         coords: datos.coords,
@@ -46,23 +54,48 @@ export const savePlace = (datos) => {
 
       dispatch(addPlace(newData));
     } catch (error) {
-      console.log(error);
+      console.log("Error Action Places Save_place",error);
     }
   };
 };
 
 
-export const loadPlaces = () => {
+export const loadPlaces = (user) => {
   return async (dispatch) => {
     try {
-      const result = await getPlaces();
-      console.log("getPlace")
-      console.log(result.rows)
-      //dispatch(viewPlace(result.rows));
+      const result = await getPlaces(user);
+      
       dispatch(viewPlace(result?.rows?._array));
     } catch (error) {
-      console.log(error);
+      console.log("Error Action Places loadPlaces",error);
       throw error;
+    }
+  };
+};
+
+export const loadPlaceById = (id) => {
+  return async (dispatch) => {
+    try {
+      const result = await getPlaceById(id);
+      
+      dispatch(viewPlaceById(result?.rows?._array));
+      return(result?.rows?._array)
+    } catch (error) {
+      console.log("Error Action Places loadPlaceById",error);
+      throw error;
+    }
+  };
+};
+
+
+export const delete_Place = (id) => {
+  return async (dispatch) => {
+    try {
+      const result = await deletePlace(id);
+
+      dispatch(delPlace(id));
+    } catch (error) {
+      console.log("Error Action Places delete_Place",error);
     }
   };
 };

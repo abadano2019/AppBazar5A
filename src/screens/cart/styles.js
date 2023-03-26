@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
   },
   listContainer: {
     flex: 1,
-    backgroundColor: THEME.colors.white,
+    backgroundColor: THEME.colors.background,
   },
   footer: {
     backgroundColor: THEME.colors.white,
@@ -55,6 +55,7 @@ export const styles = StyleSheet.create({
   },
   headerTitle: {
     fontFamily: 'Bitter-Bold',
+    color: THEME.colors.white,
     fontSize: 18,
   },
 });

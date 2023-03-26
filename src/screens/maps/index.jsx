@@ -1,10 +1,10 @@
-import MapView, { Marker } from "react-native-maps";
-import { Text, TouchableOpacity, View } from "react-native";
-import { useLayoutEffect, useState } from "react";
+import MapView, { Marker } from 'react-native-maps';
+import { useLayoutEffect, useState } from 'react';
 
-import IonicIcons from "@expo/vector-icons/Ionicons";
-import {THEME} from "../../constants/theme/index";
-import { styles } from "./styles";
+import IonicIcons from '@expo/vector-icons/Ionicons';
+import { THEME } from '../../constants/theme/index';
+import { TouchableOpacity } from 'react-native';
+import { styles } from './styles';
 
 const Maps = ({ navigation, route }) => {
   const { coords } = route.params;
@@ -25,7 +25,7 @@ const Maps = ({ navigation, route }) => {
   };
 
   const onHandlerSaveLocation = () => {
-    if (selectedLocation) navigation.navigate("NewPlace", { mapLocation: selectedLocation });
+    if (selectedLocation) navigation.navigate('NewPlace', { mapLocation: selectedLocation });
   };
 
   useLayoutEffect(() => {
@@ -35,7 +35,7 @@ const Maps = ({ navigation, route }) => {
           <IonicIcons
             name="md-save-sharp"
             size={20}
-            color={!selectedLocation ? THEME.colors.gray : THEME.colors.white}
+            color={!selectedLocation ? THEME.colors.gray : THEME.colors.primary}
           />
         </TouchableOpacity>
       ),
@@ -50,7 +50,7 @@ const Maps = ({ navigation, route }) => {
       minZoomLevel={14}>
       {selectedLocation && (
         <Marker
-          title="Ubicacion seleccionada"
+          title="selected location"
           coordinate={{
             latitude: selectedLocation.lat,
             longitude: selectedLocation.lng,
@@ -62,4 +62,3 @@ const Maps = ({ navigation, route }) => {
 };
 
 export default Maps;
-

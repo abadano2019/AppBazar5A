@@ -4,7 +4,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { THEME } from '../../constants/theme/index';
 import { styles } from './styles';
 
-const CartItem = ({ item, onDelete, onSubstractQuantity,onAddQuantity }) => {
+const CartItem = ({ item, onDelete, onSubstractQuantity, onAddQuantity }) => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>

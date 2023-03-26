@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "breadshopapp",
-    "slug": "breadshopapp",
+    "name": "bazar5a",
+    "slug": "bazar5a",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,13 +21,36 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.bazar5a",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#24BC7D"
+      },
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "CAMERA",
+        "WRITE_EXTERNAL_STORAGE",
+        "READ_EXTERNAL_STORAGE"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDMoMttG6LW1Sohtkt0fqZaJc41h9SzApM"
+        }
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a8673af5-e8a7-4ddd-bbd4-6c0a9f74960b"
+      }
+    },
+    "production":{
+      "android": {
+        "buildType": "apk"
+      }
     }
   }
 }

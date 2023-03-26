@@ -5,14 +5,15 @@ import {
   Platform,
   Text,
   TouchableOpacity,
-  View
+  View,
 } from 'react-native';
 import { UPDATED_FORM, onInputChange } from '../../utils/form';
 import { signIn, signUp } from '../../store/actions';
 import { useReducer, useState } from 'react';
 
-import { Input } from '../../components'
+import { Input } from '../../components';
 import { THEME } from '../../constants/theme/index';
+import {loadPlaces} from '../../store/actions/index';
 import { styles } from './styles';
 import { useDispatch } from 'react-redux';
 
@@ -51,19 +52,17 @@ const Auth = ({ navigation }) => {
   const messageButton = isLogin ? 'Login' : 'Register';
 
   const onHandlerSubmit = () => {
-    //dispatch(isLogin ? signIn(email, password) : signUp(email, password));
-    if(isLogin){
-      dispatch(signIn(formState.email.value, formState.password.value))
-      if(formState.isFormValid){
-      Alert.alert("Login successful", "", [
-        { text: "", style: "success" },
-      ]);}
-    }else{
-      dispatch(signUp(formState.email.value, formState.password.value))
-      if(formState.isFormValid){
-      Alert.alert("Logup successful", "", [
-        { text: "", style: "success" },
-      ]);
+    if (isLogin) {
+      if (formState.isFormValid) {
+        dispatch(signIn(formState.email.value, formState.password.value));
+      } else {
+        Alert.alert('Check the data entered', '', [{ text: '', style: 'success' }]);
+      }
+    } else {
+      if (formState.isFormValid) {
+        dispatch(signUp(formState.email.value, formState.password.value));
+      } else {
+        Alert.alert('Check the data entered', '', [{ text: '', style: 'success' }]);
       }
     }
   };
@@ -80,21 +79,21 @@ const Auth = ({ navigation }) => {
       <View style={styles.container}>
         <View style={styles.content}>
           <Text style={styles.title}>{title}</Text>
-          
+
           <Input
-             placeholder="enter your email"
-             placeholderTextColor={THEME.colors.gray}
-             autoCapitalize="none"
-             autoCorrect={false}
-             onChangeText={(text) => onHandlerInputChange(text, 'email')}
-             value={formState.email.value}
-             hasError={formState.email.hasError}
-             error={formState.email.error}
-             touched={formState.email.touched}
-             label="Email"
-             labelStyle={styles.label}
+            placeholder="enter your email"
+            placeholderTextColor={THEME.colors.gray}
+            autoCapitalize="none"
+            autoCorrect={false}
+            onChangeText={(text) => onHandlerInputChange(text, 'email')}
+            value={formState.email.value}
+            hasError={formState.email.hasError}
+            error={formState.email.error}
+            touched={formState.email.touched}
+            label="Email"
+            labelStyle={styles.label}
           />
-          
+
           <Input
             placeholder="enter your password"
             placeholderTextColor={THEME.colors.gray}
@@ -108,7 +107,6 @@ const Auth = ({ navigation }) => {
             touched={formState.password.touched}
             label="Password"
             labelStyle={styles.label}
-            
           />
           <View style={styles.buttonContainer}>
             <Button title={messageButton} color={THEME.colors.primary} onPress={onHandlerSubmit} />

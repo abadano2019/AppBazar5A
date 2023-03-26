@@ -22,7 +22,8 @@ export const styles = StyleSheet.create({
     alignItems: "flex-start",
   },
   title: {
-    fontSize: 16,
+    fontSize:16,
+    fontWeight: "500",
     color: THEME.colors.text,
     marginBottom: 10,
   },

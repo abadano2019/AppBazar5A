@@ -24,6 +24,7 @@ export const getOrders = () => {
         orders,
       });
     } catch (error) {
+      console.log("Error Action Orders Get_orders", error)
       dispatch({
         type: GET_ORDERS,
         error,
@@ -49,6 +50,7 @@ export const deleteOrder = (id) => {
         id,
       });
     } catch (error) {
+      console.log("Error Action Order Delete_order",error)
       dispatch({
         type: DELETE_ORDER,
         error,
@@ -79,6 +81,7 @@ export const selectOrder = (id) => {
         id,
       });
     } catch (error) {
+      console.log("Error Action Orders Select_order", error)
       dispatch({
         type: SELECT_ORDER,
         error,

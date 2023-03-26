@@ -1,5 +1,7 @@
 export const placesTypes = {
     ADD_PLACE: 'ADD_PLACE',
     VIEW_PLACE: 'VIEW_PLACE',
-    SAVE_PLACE: 'SAVE_PLACE'
+    VIEW_PLACE_BY_ID: 'VIEW_PLACE_BY_ID',
+    SAVE_PLACE: 'SAVE_PLACE',
+    DEL_PLACE: 'DEL_PLACE'
 };

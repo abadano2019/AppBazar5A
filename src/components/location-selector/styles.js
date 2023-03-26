@@ -15,4 +15,7 @@ export const styles = StyleSheet.create({
     borderColor: THEME.colors.primary,
     borderWidth: 1,
   },
+  buttonContainer:{
+    margin:5    
+  }
 });
