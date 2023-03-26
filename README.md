@@ -199,14 +199,13 @@ entre otras cosas
 
 # ANEXO
 
-Proyecto desarrollado utilizando React JS [Create React App](https://github.com/abadano2019/bazar5A).
+Proyecto desarrollado utilizando Expo [Create an app using Expo](https://github.com/abadano2019/AppBazar5A).
 
 ## Comandos disponibles
 
 ### `npm start`
 
 Desde una terminal donde se esté ubicado en la raiz del proyecto se puede iniciar la aplicación ejecutando el comando npm start
-Se ejecuta en la siguiente url: [http://localhost:3000](http://localhost:3000).
 
 Previo a la ejecución de la app se deben instalar las dependencias del proyecto.
 
@@ -214,16 +213,16 @@ Previo a la ejecución de la app se deben instalar las dependencias del proyecto
 
 Ejecute el comando npm install para instalar todas las dependencias del archivo node_modules del proyecto.
 
-### `npm test`
+### `build`
 
-Para ejecutar el modo iterativo de ejecución (test) ejecutar npm test
-Para mayor información dirigirse a la siguiente pagina: [running tests](https://facebook.github.io/create-react-app/docs/running-tests).
+Para generar un ejecutable para subir a producción ejecute el comando 
 
-### `npm run build`
+'eas build -p android --profile prod'
 
-Para generar un ejecutable para subir a producción ejecute el comando npm run build
+previo registro en https://expo.dev/
 
-Para mayor información dirigirse a la siguiente pagina: [deployment](https://facebook.github.io/create-react-app/docs/deployment).
+Para mayor información dirigirse a la siguiente pagina (ANDROID): [Build APKs for Android Emulators and devices](https://docs.expo.dev/build-reference/apk/).
+o dirigirse a la siguiente pagina (IOS): [Build for iOS Simulators](https://docs.expo.dev/build-reference/simulators/).
 
 ## Learn More
 
