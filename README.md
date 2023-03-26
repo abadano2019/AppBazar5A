@@ -62,20 +62,32 @@ A continuación se marcan los pasos para poder utilizar la aplicación con datos
 
 ## Estructura de carpetas
 
-![image](https://user-images.githubusercontent.com/48340360/227794432-da8838fd-2db1-4703-9735-69af14b1a792.png)
+![image](https://user-images.githubusercontent.com/48340360/227794486-d415326e-6c50-48be-8f82-f37c6beb055a.png)
 
 
-Dentro de la carpeta src tenemos la siguiente esctrucutra, una carpeta api con los archivos necesarios para la conexión a la base de datos, una carpeta components donde se encuentran los archivos jsx, componentes a renderizar, una carpeta context en la cual tenemos creado un archivo con el contexto del carrito, una carpeta js para clases varias en este caso tenemos la clase alertas.js para la utilización de alertas de sweetalerts, una carpeta pages con las páginas disponibles de la aplicación, una carpeta sass con el archivo App.sass con todos los estilos.
+Dentro de la carpeta src tenemos la siguiente esctrucutra, una carpeta components donde se encuentran los componentes de la aplicación, una carpeta con el nombre constants donde se encuentaran los datos, la configuración para la conexición a firebase, la conexión al servicio de google.maps y la definición de colotes para ser utilizados por los estilos de los distintos componentes y vistas, una carpeta models donde se encuentran los distintos modelos a utilizar por las bases de datos, una carpeta navigation con toda la estructura y archivos para la navegación de las pantallas por intermedio de @react-navigation, una carpeta con el nombre screens con todas las vistas que la apliación utiliza, una carpta con el nombre Store con la implementación de 'redux-thunk' y una carpeta utils con elementos de uso reutilizable como ser el formulario de inicio y registro de sesión.
 
-#### api
-Dentro de la carpeta api tenemos los siguientes archivos:
-* config.js: archivo que contiene la información necesaria para la conexión con firebase, en el se utilizan variables de entorno las cuales toman la información del archivo .env 
+#### components
 
-* products.js: archivo que contiene la logica necesaria para poder realizar las consultas a la base de datos sobre la colección de productos (items)
+![image](https://user-images.githubusercontent.com/48340360/227795274-ca088124-6a0d-486a-a4de-fd4999d8a43c.png)
 
-* order.js: archivo que contiene la logica necesaria para poder realizar las consultas a la base de datos sobre la colección de ordenes (orders)
+Dentro de la carpeta components podemos destacar los siguientes archivos:
+* cart-item.jsx: encargado de desplegar un elemento del carrito con los botones de mas y menos para aumentar o disminuir la cantidad del producto seleccionado, tambien cuenta con la posibilidad de borrarse del carrito.
 
-#### Components
+* category-item.jxs: encargado de desplegar una tarjeta con el nombre de una categoría. El dato se encuentra disponible en el archivo categories.js en la ruta /src/constants/data
+
+* image-selector.jsx: encargado de verificar permisos de usa de la camara del dispositivo y posterior toma de imagen.
+
+* order-item.jsx: encargado de desplegar la información de una orden, esta información se encuentra en firebase en rtdb por usuario de generación de orden.
+
+* place-item.jsx: encargado de desplegar la información de una dirección cargada por el usuario, la información de guardea en SQLite, la dirección puede ser borrada por intermedio del icono de borrado.
+
+* product-item.jsx: encargado de desplegar la información de un producto para la vista por categorías.
+
+#### constants
+
+![image](https://user-images.githubusercontent.com/48340360/227796245-eb228be7-b68c-4015-bf43-046904765d8a.png)
+
 
 * AddWidget.jsx: componente que contiene un icono con el simbolo de +.
 * SubstractWidget.jsx: componente que contiene un icono con el simbolo de -.
