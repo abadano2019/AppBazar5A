@@ -1,13 +1,10 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="./assets/logo.png" alt="Logo" width="80" height="80">
     <img src="https://github.com/abadano2019/AppBazar5A/blob/master/assets/icon.png" width="80" height="80">
     <p> E-COMMERCE BAZAR 5A </p>
   </a>
 </div>
-
-![image](https://user-images.githubusercontent.com/48340360/227749082-38eec223-65af-4512-a9af-0859252b26eb.png)
 
 
 
@@ -15,22 +12,23 @@
 <!-- ABOUT THE PROJECT -->
 ## Introducción
 
-El sitio Bazar 5A surge como un proyecto familiar en donde se vuelcan muchos años de experiencia en venta de articulos de Bazar. Consta de varias secciones como ser cristalería, electrodomésticos, cocina, vajilla entre otros, pudiendo adaptarse a las necesidades del mercado. Dentro de las funcionalidades un cliente puede ingresar a la pagina, navegar entre las opciones disponibles, seleccionar un producto, ver los detalles particulares del producto, agregarlo al carrito de compra
+El sitio Bazar 5A surge como un proyecto familiar en donde se vuelcan muchos años de experiencia en venta de articulos de Bazar. Consta de varias secciones como ser cristalería, electrodomésticos, cocina, vajilla entre otros, pudiendo adaptarse a las necesidades del mercado. Dentro de las funcionalidades un cliente puede ingresar a la pagina, navegar entre las opciones disponibles, seleccionar un producto, ver los detalles particulares del producto, agregarlo al carrito de compra.
 
 ### Tecnologias utilizadas
 
-Dentro del amplio abanico de tecnologías disponibles para el desarrollo de la aplicación se utilizaron:
+Dentro del amplio abanico de tecnologías disponibles para el desarrollo de la aplicación, se detallan algunas de las que se utilizaron en el proyecto:
 
-##### * React
+##### * React Native
 ##### * Java Script
-##### * Boostrap
-##### * Sass
-##### * Firebase
-##### * React-Icons
-##### * React-spinners
-##### * SweetAlert
+##### * Firebase rtdb
+##### * Firebase Storage
+##### * Firebase Autentication
+##### * Expo
+##### * SQLite
+##### * Utilización de la Camara de los dispositivos
+##### * Utilización de Geolocalización de Google
 
-React como herramienta base para la elaboración de la aplicación, Java Script para todo lo relacionado a lógica de decisión, Boostrap se eligió como framework para el armado de componentes, SASS para los estilos, Firebase se utilizó como repositorio y como base de datos, React-Icons para la utilización de iconos, react-spinners para la utilización de loaders y sweetalert para la presentación de mensajes por pantalla.
+React Native y Expo como herramientas base para la elaboración de la aplicación, Java Script para todo lo relacionado a lógica de decisión, Firebase se utilizó como repositorio, base de datos y medio de registro y autenticación de usuarios, SQLite como base de datos local y librerias especificas para 
 
 <!-- GETTING STARTED -->
 ## Instalación
