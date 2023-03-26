@@ -200,6 +200,8 @@ entre otras cosas
 
 Proyecto desarrollado utilizando Expo [Create an app using Expo](https://docs.expo.dev/tutorial/create-your-first-app/).
 
+Proyecto AppBazar5A (https://github.com/abadano2019/AppBazar5A)
+
 Testeado en Android Studio Dolphin con los siguiente dispositivos virtuales:
 
 ![image](https://user-images.githubusercontent.com/48340360/227805485-b123b23d-3e93-4f37-abf9-0995b24bba65.png)
