@@ -229,13 +229,13 @@ Para mayor información dirigirse a la siguiente pagina: [deployment](https://fa
 
 Si desea aprender sobre React JS dirijase a los siguientes links: 
 
-[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-[React documentation](https://reactjs.org/).
+[Create a new app with Expo documentation](https://docs.expo.dev/get-started/create-a-new-app/).
+[Expo documentation](https://docs.expo.dev/).
 
 
 <!-- CONTACT -->
-## Contact
+## Contact111
 
 Ariel Badano - abadano05@gmail.com
 
-Project Link: [https://github.com/abadano2019/bazar5A](https://github.com/abadano2019/bazar5A)
+Project Link: [https://github.com/abadano2019/AppBazar5A](https://github.com/abadano2019/AppBazar5A)
