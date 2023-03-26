@@ -16,7 +16,7 @@ El sitio Bazar 5A surge como un proyecto familiar en donde se vuelcan muchos añ
 
 ### Tecnologias utilizadas
 
-Dentro del amplio abanico de tecnologías disponibles para el desarrollo de la aplicación, se detallan algunas de las que se utilizaron en el proyecto:
+Dentro de las tecnologías utilizadas para el desarrollo de la aplicación podemso encontrar:
 
 ##### * React Native
 ##### * Java Script
@@ -28,7 +28,7 @@ Dentro del amplio abanico de tecnologías disponibles para el desarrollo de la a
 ##### * Utilización de la Camara de los dispositivos
 ##### * Utilización de Geolocalización de Google
 
-React Native y Expo como herramientas base para la elaboración de la aplicación, Java Script para todo lo relacionado a lógica de decisión, Firebase se utilizó como repositorio, base de datos y medio de registro y autenticación de usuarios, SQLite como base de datos local y librerias especificas para 
+React Native y Expo como herramientas base para la elaboración de la aplicación, Java Script para todo lo relacionado a lógica de decisión, Firebase se utilizó como repositorio de imagenes, base de datos y medio de registro y autenticación de usuarios, SQLite como base de datos local y librerias especificas para la utilización de la camara del dispositivo y la geolocalización- 
 
 <!-- GETTING STARTED -->
 ## Instalación
@@ -37,27 +37,19 @@ A continución se presentan instrucciónes para la utilización de la aplicació
 
 ### Requisitos previos
 
-Se recomienda el uso de Visual Studio Code para la visualización y administración del codigo, se debe tener instalado Node JS, en caso de querer utilizar información personal, se debe utilizar una cuenta de gmail para la configuración de firebase.
+Se recomienda el uso de Visual Studio Code para la visualización y administración del codigo, se debe tener instalado Node JS, en caso de querer utilizar datos propios, se debe utilizar una cuenta de gmail para la configuración de firebase y el servicio de google maps.
 
 ### Pasos a seguir
 
 A continuación se marcan los pasos para poder utilizar la aplicación con datos propios.
 
-1. Configurar la base de datos en firebase con los siguiente campos en una colección con el nombre items la cual es necesaria para la carga de información de los productos:
- * categoria: string (corresponde a la categoría del producto para luego utilizar como filtro)
- * descripcion: string (descripción del producto ofrecido)
- * detalle: string (detalle del producto ofrecido)
- * img_src: string (url de la imagen del producto pude ser desde internet o como en el caso del proyecto desde el storage de firebase)
- * precio: numero (precio del producto ofrecido)
- * stock: numero (cantidad de productos disponibles)
- * tag: string (información particular y especifica del producto)
- * titulo: string (Titulo o nombre del producto ofrecido)
+1. Configurar el servicio de realtime database en firebase. 
+2. Configurar el servicio de autenticación de firebase por intermedio de correo electónico.
+3. En caso de querar utilizar imagenes propias se deberá cambiar la url en el archivo productos.js ubicado en la carpeta src/constants/data
+4. Configurar los servicios necesarios para el uso de la api de geolocalización de google.maps 
+5. De las configuraciones vista en los puntos del 1 al 4 se deben obtener 2 api key una de firebase y otra de google.maps
 
-
-
-
-
-2. Clonar o descargar el repositorio, antes de ejecutar este comando debe posicionarse en la carpeta donde desea clonar el repositorio
+6. Clonar o descargar el repositorio, antes de ejecutar este comando debe posicionarse en la carpeta donde desea clonar el repositorio
    ```sh
    git clone https://github.com/abadano2019/bazar5A.git
    ```
