@@ -240,8 +240,6 @@ Si desea aprender sobre Expo / React Native dirijase a los siguientes links:
 
 * Curso desarrollo de aplicaciones - CoderHouse.com - Profesor: Daniel Alberto Soto Guillen
 
-Ariel Badano - abadano05@gmail.com
-
 <!-- CONTACT -->
 ## Contacto
 
