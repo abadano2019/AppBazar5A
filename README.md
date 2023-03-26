@@ -223,7 +223,9 @@ Ejecute el comando npm install para instalar todas las dependencias del archivo 
 
 Para generar un ejecutable para subir a producción ejecute el comando 
 
-'eas build -p android --profile prod'
+  ```sh
+   eas build -p android --profile prod
+   ```
 
 previo registro de un usuario en el sitio de expo dev https://expo.dev/
 
