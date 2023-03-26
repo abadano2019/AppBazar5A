@@ -235,6 +235,12 @@ Si desea aprender sobre Expo / React Native dirijase a los siguientes links:
 [Create a new app with Expo documentation](https://docs.expo.dev/get-started/create-a-new-app/).
 [Expo documentation](https://docs.expo.dev/). [React Native documentation] (https://reactnative.dev/)
 
+<!-- REFERENCIAS -->
+## Referencias
+
+* Curso desarrollo de aplicaciones - CoderHouse.com - Profesor: Daniel Alberto Soto Guillen
+
+Ariel Badano - abadano05@gmail.com
 
 <!-- CONTACT -->
 ## Contacto
