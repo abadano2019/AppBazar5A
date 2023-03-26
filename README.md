@@ -157,7 +157,7 @@ la carpeta store cuenta con toda la estructura para el uso de redux-thunk, se ut
 
 ### Otros archivos
 
-Dentro de la carpeta assets podemos encontrar los iconos de la aplicación y la fuente utilizada
+Dentro de la carpeta assets podemos encontrar los iconos de la aplicación y las fuentes utilizada
 
 ![image](https://user-images.githubusercontent.com/48340360/227800339-7429ca8c-fb4b-4bd5-8def-9faa2fa8124f.png)
 
