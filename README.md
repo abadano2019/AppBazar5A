@@ -185,15 +185,16 @@ Dentro de la carpeta assets podemos encontrar los iconos de la aplicación y las
 <!-- ROADMAP -->
 ## Mejoras
 
-Esta es una primera versión del proyecto Bazar5A, en el cual quedan para definir en un nuevo alcance otras funcionalidades como ser:
-* Modificar la cantidad de elementos de un producto en el carrito
-* Eliminar un producto del carrito desde la pagina de despliege de los datos de carrito, se presentan los botones pero no la logica para poder realizarlo.
-* Generar nueva vista para ver el historial de ordenes de un cliente
-* Hostear la aplicación en el servicio de hosting de firebase
-* Implementar algun servicio de autenticación
-* Generar nuevas colecciones en la base de datos como una lista de productos deseados o favoritos.
-* Agregar más detalles a los productos, como ser un carrusel de otras imagenes. (se debe contar con un catalogo de imagenes para el producto.)
-* Generar las validaciones necesarias del stock disponible en la base de datos.
+Esta es una primera versión del proyecto AppBazar5A, en el cual quedan para definir en un nuevo alcance otras funcionalidades como ser:
+
+* Agregar los modelos de datos que faltan e impactar datos contra firebase.
+* Generar una vista para ampliar los datos de registro de los usuarios.
+* Generar modulo de mantenimiento de los productuos para poder modificar y eliminar los productos existente y agregar nuevos.
+* Utilizar el template form generado para la autorización para el formulario de contacto.
+* Publicar la aplicación al menos en Play Store de Google. 
+* Generar un modelo y vista para los productos favoritos o deseados del usuario.
+* Generar las validaciones necesarias para el control de stock de los productos.
+* Agregar otras fotos en un carrusel sobre los productos seleccionados.
 
 entre otras cosas
 
@@ -219,7 +220,7 @@ Para generar un ejecutable para subir a producción ejecute el comando
 
 'eas build -p android --profile prod'
 
-previo registro en https://expo.dev/
+previo registro de un usuario en el sitio de expo dev https://expo.dev/
 
 Para mayor información dirigirse a la siguiente pagina (ANDROID): [Build APKs for Android Emulators and devices](https://docs.expo.dev/build-reference/apk/).
 o dirigirse a la siguiente pagina (IOS): [Build for iOS Simulators](https://docs.expo.dev/build-reference/simulators/).
